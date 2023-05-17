@@ -1,21 +1,13 @@
+def solution(s):
+    while '()' in s:
+        sp = s.split('()') 
+        s = ''.join(sp) 
+    return len(s) == 0 
+
 n = int(input())
 for i in range(n):
-  lst = []
-  cnt = 0
   m = input()
-  for j in m:
-    if j=='(':
-      lst.append(j)
-      cnt+=1
-    else:
-      if cnt>0:
-        cnt-=1
-      else:
-        print("NO")
-        break
+  if solution(m) == True:
+    print("YES")
   else:
-    if cnt==0:
-      print("YES")
-    else:
-      print("NO")
-    
+    print("NO")
